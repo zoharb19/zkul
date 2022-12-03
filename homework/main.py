@@ -1,18 +1,17 @@
+import random
+
+
 def main():
-    import random
-    random_num = random.randint(0, 10)
-    guess = int(input("choose a number between 0 and 10: "))
-    while guess != random_num:
+    random_num = random.randint(1, 10)
+    guess = 0
+    while random_num != guess:
+        guess = int(input("take a guess: "))
         if random_num > guess:
-            print("too low try again                           ◝ʕ •ᴥ• ʔ◜")
-            guess = int(input("choose a number between 0 and 10: "))
-
-        if random_num < guess:
-            print("too high try again                          ʕノ•ᴥ•ʔノ ︵ ┻━┻")
-            guess = int(input("choose a number between 0 and 10: "))
-
+            print("too low try again")
+        elif random_num < guess:
+            print("too high")
     else:
-        print("you won!                                     ʕ　·ᴥ·ʔ人ʕ·ᴥ·　ʔ ")
+        print("you won")
 
 
 if __name__ == '__main__':
