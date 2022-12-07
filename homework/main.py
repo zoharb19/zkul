@@ -1,4 +1,5 @@
 import random
+import sys
 
 
 def main():
@@ -15,8 +16,8 @@ def main():
         if player_num == random_num:
             # 2.3.1 print you won
             print("YOU WON")
-        # 2.3.2 exit game
-            break
+            # 2.3.2 exit game
+            sys.exit(0)
         # 2.4 else:
         else:
             # 2.4.1 print if higher or lower
