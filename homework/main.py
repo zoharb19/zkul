@@ -2,17 +2,18 @@ import random
 
 
 def main():
-    random_num = random.randint(1, 10)
-    guess = 0
-    while random_num != guess:
-        guess = int(input("take a guess: "))
-        if random_num > guess:
-            print("too low try again")
-        elif random_num < guess:
-            print("too high")
-    else:
-        print("you won")
-
+    random_num = random.randint(0, 10)
+    print("this is guess the number game")
+    guess = int(input())
+    for guess_taken in (0, 5):
+        print("guess a number: " + str(guess))
+        if guess < random_num:
+            print("number too low")
+        elif guess > random_num:
+            print("guess is too high")
+        else:
+            break
+    
 
 if __name__ == '__main__':
     main()
