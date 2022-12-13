@@ -1,5 +1,12 @@
 import random
-import sys
+
+
+def report_winner(winner):
+    print(f"{winner} won!")
+
+
+def tie():
+    print("its a tie")
 
 
 def main():
@@ -20,19 +27,19 @@ def main():
         if user_input == "q":
             break
         elif user_input == pc_input:
-            print("its a tie")
+            tie()
         elif user_input == rock and pc_input == paper:
-            print("pc won")
+            report_winner("pc")
         elif user_input == rock and pc_input == scissors:
-            print("you won")
+            report_winner("you")
         elif user_input == paper and pc_input == rock:
-            print("you won")
+            report_winner("you")
         elif user_input == paper and pc_input == scissors:
-            print("pc won")
+            report_winner("pc")
         elif user_input == scissors and pc_input == paper:
-            print("you won")
+            report_winner("you")
         elif user_input == scissors and pc_input == rock:
-            print("pc won")
+            report_winner("pc")
         else:
             print("only rock paper scissors and Q allowed !!!")
 
