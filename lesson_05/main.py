@@ -2,7 +2,10 @@ import random
 
 
 def report_winner(winner):
-    print(f"{winner} won!")
+    if winner == "tie":
+        print(f"its a {winner}")
+    else:
+        print(f"{winner} won")
 
 
 def main():
@@ -27,7 +30,7 @@ def main():
         if user_input == quit_game:
             break
         elif user_input == pc_input:
-            report_winner("no one")
+            report_winner("tie")
         elif user_input == rock and pc_input == paper:
             report_winner("pc")
         elif user_input == rock and pc_input == scissors:
