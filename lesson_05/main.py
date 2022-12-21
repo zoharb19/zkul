@@ -2,14 +2,14 @@ import random
 
 
 def report_winner(winner):
-    print(f"{winner} won!")
-
-
-def tie():
-    print("its a tie")
+    if winner is None:
+        print(f"its a tie")
+    else:
+        print(f"{winner} won")
 
 
 def main():
+    quit_game = "q"
     rock = "rock"
     paper = "paper"
     scissors = "scissors"
@@ -18,16 +18,19 @@ def main():
     print("rock paper scissors!")
     user_input = None
 
-    while user_input != "q":
+    while user_input != quit_game:
         print("choose your weapon: Rock, Paper, Scissors or Q to quit:")
         user_input = input()
         pc_input = random.choice(rock_paper_scissors)
-        print(f"{user_input} vs {pc_input}")
+        if user_input == quit_game:
+            print("bye")
+        elif user_input != pc_input or user_input == pc_input:
+            print(f"{user_input} vs {pc_input}")
 
-        if user_input == "q":
+        if user_input == quit_game:
             break
         elif user_input == pc_input:
-            tie()
+            report_winner(None)
         elif user_input == rock and pc_input == paper:
             report_winner("pc")
         elif user_input == rock and pc_input == scissors:
