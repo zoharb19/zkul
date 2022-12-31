@@ -1,19 +1,19 @@
 
 def primes(a_number):
-    for i in range(2, a_number - 1):
-        if a_number % i == 1:
-
-            print(f"{a_number} is a prime")
-            break
+    # prime number only divides by itself and 1
+    for i in range(2, a_number):
+        if a_number % i == 0:
+            return "not a prime"
         else:
-            print(f"{a_number} is not prime")
-            break
+            i = i + 1
+            if a_number == i:
+                return "a prime"
 
 
 def main():
     print("choose a num")
     num = int(input())
-    primes(num)
+    print(primes(num))
 
 
 if __name__ == '__main__':
