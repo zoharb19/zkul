@@ -1,23 +1,23 @@
 # pi = + 4/1 - 4/3 + 4/5 - 4/7...
 def pi_calculate(number_of_calculations):
+    result = 0
+    top = 4
 
-    pi = 0
-    bottom_part = 1
     for i in range(number_of_calculations):
+        bottom = i * 2 + 1
+        mana = top/bottom
         if i % 2 == 0:
-            pi += 4/bottom_part
-            bottom_part += 2
+            result += mana
         else:
-            pi -= 4/bottom_part
-            bottom_part += 2
-    return pi
+            result -= mana
+    
+    return result
 
 
-def main():
+def main():    
+    print(pi_calculate(3000000000000))
 
-    print(pi_calculate(100000000))
-
-
+    
 if __name__ == '__main__':
     main()
 

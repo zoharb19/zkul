@@ -4,7 +4,8 @@ def primes(a_number):
     for i in range(2, a_number):
         if a_number % i == 0:
             return False
-    return True
+    else:
+        return True
 
 
 def main():
